@@ -22,6 +22,17 @@
   --serif:'Fraunces',Georgia,serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
 }
+[data-theme="light"]{
+  --bg:#f8f7f4;
+  --bg-soft:#ffffff;
+  --panel:#ffffff;
+  --line:#e0ddd8;
+  --ink:#1a1a1a;
+  --ink-dim:#4a4a4a;
+  --ink-faint:#8a8a8a;
+  --accent:#2d7a2d;
+  --accent-2:#0066aa;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -56,7 +67,7 @@ h1{
   margin-bottom:24px;
 }
 h1 .dim{color:var(--ink-faint);font-style:italic;font-weight:400}
-.tagline{font-size:clamp(15px,2vw,18px);color:var(--ink-dim);max-width:680px;line-height:1.7}
+.tagline{font-size:clamp(15px,2vw,18px);color:var(--ink-dim);max-width:100%;line-height:1.7}
 .tagline b{color:var(--ink);font-weight:500}
 .contact{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;font-size:13px}
 .contact a{color:var(--ink-dim);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;display:inline-flex;align-items:center;gap:7px}
@@ -124,20 +135,75 @@ footer a:hover{color:var(--accent)}
   .entry-meta{font-size:11px}
   section{padding:46px 0}
 }
+
+.download-pdf{background:var(--accent);color:var(--bg)!important;padding:6px 14px;border-radius:3px;font-weight:500}
+.download-pdf:hover{background:var(--accent-2);border-color:transparent!important}
+.download-pdf::before{content:"⬇"!important;color:var(--bg)!important}
+
+.theme-toggle{position:fixed;top:24px;right:24px;z-index:100;background:var(--panel);border:1px solid var(--line);padding:10px 12px;cursor:pointer;font-size:18px;border-radius:4px;transition:.2s}
+.theme-toggle:hover{border-color:var(--accent);transform:scale(1.05)}
+[data-theme="light"] body{background-image:
+  radial-gradient(ellipse 80% 50% at 50% -10%, rgba(45,122,45,.08), transparent),
+  radial-gradient(ellipse 60% 50% at 90% 100%, rgba(0,102,170,.06), transparent)}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11px}
+  body::after{display:none}
+  .wrap{max-width:100%;padding:0}
+  header{padding:20px 0 15px}
+  .eyebrow{color:#333}
+  h1{font-size:36px;color:#000}
+  h1 .dim{color:#666}
+  .tagline{color:#333;font-size:11px}
+  .tagline b{color:#000}
+  .contact{font-size:10px}
+  .contact a{color:#333}
+  .contact a::before{color:#333}
+  .download-pdf{display:none}
+  .theme-toggle{display:none}
+  section{padding:15px 0}
+  .sec-head{margin-bottom:15px}
+  .sec-num{color:#666}
+  .sec-title{font-size:20px;color:#000}
+  .entry{padding:10px 0;gap:15px}
+  .entry-meta{font-size:9px;color:#666}
+  .entry-meta .date{color:#333}
+  .entry-body h3{font-size:14px;color:#000}
+  .entry-body .role{color:#333;font-size:10px}
+  .entry-body li{font-size:10px;color:#333}
+  .entry-body li::before{color:#666}
+  .entry-body li b{color:#000}
+  .proj-grid{gap:10px}
+  .proj{background:#f5f5f5;border-color:#ddd;padding:12px}
+  .proj .pdate{color:#333;font-size:9px}
+  .proj h4{font-size:13px;color:#000}
+  .proj p{font-size:10px;color:#333}
+  .chip{border-color:#ccc;color:#333;background:#f9f9f9;font-size:9px;padding:3px 8px}
+  .skill-block h4{color:#333;font-size:10px}
+  .pub .year{color:#666;font-size:20px}
+  .pub-body p{font-size:11px;color:#000}
+  .pub-body .venue{color:#333}
+  .lang strong{color:#000}
+  .lang span{color:#666}
+  footer{display:none}
+  .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
 <div class="wrap">
 
   <header>
     <div class="eyebrow reveal">Machine Learning Engineer</div>
-    <h1 class="reveal">Rachad<br><span class="dim">Lakis</span></h1>
+    <h1 class="reveal">Rachad <span class="dim">Lakis</span></h1>
     <p class="tagline reveal">ML engineer with <b>dual Master's degrees</b> and <b>published IEEE research</b> — specializing in PyTorch, object detection, LLM fine-tuning, and distributed training (DDP/FSDP). Built systems from scratch, from <b>raw NumPy backpropagation</b> to <b>multi-GPU pipelines</b>, across the full AI stack: computer vision, agentic systems, RAG, chatbots, and MCP.</p>
     <nav class="contact reveal">
       <a href="mailto:rachadlakis@gmail.com">rachadlakis@gmail.com</a>
       <a href="tel:+9613962918">+961 3 962 918</a>
       <a href="https://www.linkedin.com/in/rachadlakis" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/rachadlakis" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" onclick="window.print();return false;" class="download-pdf">Download PDF</a>
     </nav>
   </header>
 
@@ -273,7 +339,6 @@ footer a:hover{color:var(--accent)}
     <div class="proj-grid">
       <div class="proj reveal"><div class="pdate">2026</div><h4>OMNI-Train</h4><p>Multi-GPU training framework (CLI + web app) in PyTorch. DDP &amp; FSDP for faster training and models exceeding single-GPU memory. Mixed precision (bf16), gradient checkpointing, layer prefetching, PEFT, and quantization.</p></div>
       <div class="proj reveal"><div class="pdate">Sep 2025</div><h4>Model Context Protocol</h4><p>Implemented MCP servers and clients for Cooriroo, a fleet management system. Wrote the full MCP client and server in Python.</p></div>
-      <div class="proj reveal"><div class="pdate">Aug 2025 — now</div><h4>Distributed Training</h4><p>Progressed from DP → DDP → FSDP to train a very large LLM. 4-GPU architecture on PrimeIntellect, managed via SSH.</p></div>
       <div class="proj reveal"><div class="pdate">Apr 2025</div><h4>Threat Detection</h4><p>YOLOv12 + RF-DETR object detection over a 120K+ image dataset merged and normalized across classes. Tuned for best mAP and precision via Ultralytics &amp; Roboflow.</p></div>
       <div class="proj reveal"><div class="pdate">2023</div><h4>Age Detection</h4><p>Pose-estimation-based age recognition. Keypoints improved adult/child classification on full-body images with and without faces.</p></div>
       <div class="proj reveal"><div class="pdate">2022</div><h4>MNIST from Scratch</h4><p>Digit recognition in pure Python + NumPy — no PyTorch or TensorFlow. Hand-built matrix math for backprop and gradient descent.</p></div>
@@ -353,6 +418,28 @@ footer a:hover{color:var(--accent)}
 <script>
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%6*40)+'ms';io.observe(el)});
+
+function toggleTheme(){
+  const html=document.documentElement;
+  const btn=document.querySelector('.theme-toggle');
+  if(html.getAttribute('data-theme')==='light'){
+    html.removeAttribute('data-theme');
+    btn.textContent='☀️';
+    localStorage.setItem('theme','dark');
+  }else{
+    html.setAttribute('data-theme','light');
+    btn.textContent='🌙';
+    localStorage.setItem('theme','light');
+  }
+}
+(function(){
+  const saved=localStorage.getItem('theme');
+  const btn=document.querySelector('.theme-toggle');
+  if(saved==='light'){
+    document.documentElement.setAttribute('data-theme','light');
+    btn.textContent='🌙';
+  }
+})();
 </script>
 </body>
 </html>
