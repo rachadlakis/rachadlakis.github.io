@@ -137,7 +137,8 @@ footer a:hover{color:var(--accent)}
 
 @media(max-width:640px){
   .entry{grid-template-columns:1fr;gap:10px}
-  .entry-meta{font-size:11px}
+  .entry-meta{font-size:11px;order:2}
+  .entry-body{order:1}
   section{padding:46px 0}
 }
 
@@ -208,7 +209,7 @@ footer a:hover{color:var(--accent)}
       <a href="tel:+9613962918">+961 3 962 918</a>
       <a href="https://www.linkedin.com/in/rachad-lakis/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/rachadlakis" target="_blank" rel="noopener">GitHub</a>
-      <a href="#" onclick="window.print();return false;" class="download-pdf">Download PDF</a>
+      <a href="Rachad_Lakis_CV.pdf" download="Rachad_Lakis_CV.pdf" class="download-pdf">Download PDF</a>
     </nav>
   </header>
 
@@ -326,8 +327,27 @@ footer a:hover{color:var(--accent)}
     </div>
   </section>
 
+  <section id="education">
+    <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Education</h2></div>
+    <div class="entry reveal">
+      <div class="entry-meta"><span class="date">2021 — 2023</span>USJ · Beirut</div>
+      <div class="entry-body"><h3>Master's in Data Science</h3><div class="role">Université Saint-Joseph (ESIB) · Avg 16.5/20</div>
+        <ul><li>Thesis: <b>Pose Estimation Keypoints in Age Recognition of Full-Body Images</b> — published, grade 18/20.</li><li>Published at IEEE IMCET 2023.</li></ul></div>
+    </div>
+    <div class="entry reveal">
+      <div class="entry-meta"><span class="date">2016 — 2018</span>LIU</div>
+      <div class="entry-body"><h3>Master's in Computer Science</h3><div class="role">Lebanese International University · GPA 3.8/4.0</div>
+        <ul><li>Thesis: <b>Improved TF-IDF Weighting Techniques in Document Retrieval</b> — published, grade A.</li><li>Published at IEEE ICDIM 2018.</li></ul></div>
+    </div>
+    <div class="entry reveal">
+      <div class="entry-meta"><span class="date">2008 — 2013</span>LIU</div>
+      <div class="entry-body"><h3>BS in Computer Science</h3><div class="role">Lebanese International University</div>
+        <ul><li>Plus 2 years of Pure Mathematics at the Lebanese University (Hadath), 2006–2008.</li></ul></div>
+    </div>
+  </section>
+
   <section id="projects">
-    <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Selected Projects</h2></div>
+    <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Selected Projects</h2></div>
     <div class="proj-grid">
       <div class="proj reveal"><div class="pdate">2025 — 2026</div><h4>Agentic AI Framework</h4><p>Production-grade agentic AI platform. FastAPI async backend, PostgreSQL + SQLAlchemy ORM, PydanticAI agent workflows. Multi-agent orchestration, tool calling, RAG, MCP. Celery scheduler and real-time voice chat via OpenAI STT/TTS.</p><a href="https://github.com/rachadlakis/agentic-ai-framework" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
       <div class="proj reveal"><div class="pdate">2026</div><h4>OMNI-Train</h4><p>Multi-GPU training framework (CLI + web app) in PyTorch. DDP &amp; FSDP for faster training and models exceeding single-GPU memory. Mixed precision (bf16), gradient checkpointing, layer prefetching, PEFT, and quantization.</p><a href="https://github.com/rachadlakis/omni-train" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
@@ -346,7 +366,7 @@ footer a:hover{color:var(--accent)}
   </section>
 
   <section id="skills">
-    <div class="sec-head reveal"><span class="sec-num">03</span><h2 class="sec-title">Technical Skills</h2></div>
+    <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Technical Skills</h2></div>
     <div class="reveal">
       <div class="skill-block"><h4>Languages &amp; Dev</h4><div class="chips">
         <span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">Asyncio</span><span class="chip">uv / pip / conda</span></div></div>
@@ -358,25 +378,6 @@ footer a:hover{color:var(--accent)}
         <span class="chip">RAG</span><span class="chip">MCP</span><span class="chip">Prompt engineering</span><span class="chip">Tokenization</span><span class="chip">Sentiment analysis</span><span class="chip">Qdrant</span></div></div>
       <div class="skill-block"><h4>Data Science</h4><div class="chips">
         <span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SQL</span><span class="chip">Neo4j (Cypher)</span><span class="chip">Regression</span><span class="chip">Time series</span><span class="chip">Matplotlib / Seaborn</span><span class="chip">Power BI</span></div></div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="sec-head reveal"><span class="sec-num">04</span><h2 class="sec-title">Education</h2></div>
-    <div class="entry reveal">
-      <div class="entry-meta"><span class="date">2021 — 2023</span>USJ · Beirut</div>
-      <div class="entry-body"><h3>Master's in Data Science</h3><div class="role">Université Saint-Joseph (ESIB) · Avg 16.5/20</div>
-        <ul><li>Thesis: <b>Pose Estimation Keypoints in Age Recognition of Full-Body Images</b> — published, grade 18/20.</li><li>Published at IEEE IMCET 2023.</li></ul></div>
-    </div>
-    <div class="entry reveal">
-      <div class="entry-meta"><span class="date">2016 — 2018</span>LIU</div>
-      <div class="entry-body"><h3>Master's in Computer Science</h3><div class="role">Lebanese International University · GPA 3.8/4.0</div>
-        <ul><li>Thesis: <b>Improved TF-IDF Weighting Techniques in Document Retrieval</b> — published, grade A.</li><li>Published at IEEE ICDIM 2018.</li></ul></div>
-    </div>
-    <div class="entry reveal">
-      <div class="entry-meta"><span class="date">2008 — 2013</span>LIU</div>
-      <div class="entry-body"><h3>BS in Computer Science</h3><div class="role">Lebanese International University</div>
-        <ul><li>Plus 2 years of Pure Mathematics at the Lebanese University (Hadath), 2006–2008.</li></ul></div>
     </div>
   </section>
 
