@@ -103,8 +103,9 @@ section{padding:60px 0;border-bottom:1px solid var(--line)}
 .proj p{font-size:12.5px;color:var(--ink-dim);line-height:1.6}
 
 /* project links */
-.proj h4 a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:.2s}
-.proj h4 a:hover{color:var(--accent);border-color:var(--accent)}
+.proj-link{display:inline-block;margin-top:12px;font-size:11px;color:var(--accent);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid transparent;transition:.2s}
+.proj-link:hover{border-bottom-color:var(--accent)}
+.proj-link::after{content:" ↗"}
 
 /* skills */
 .skill-block{margin-bottom:28px}
@@ -213,19 +214,6 @@ footer a:hover{color:var(--accent)}
 
   <section id="experience">
     <div class="sec-head reveal"><span class="sec-num">01</span><h2 class="sec-title">Experience</h2></div>
-
-    <div class="entry reveal">
-      <div class="entry-meta"><span class="date">Jan 2026 — Present</span>OMNITrain</div>
-      <div class="entry-body">
-        <h3>OMNITrain</h3>
-        <div class="role">Ideation &amp; ML Engineering Developer</div>
-        <ul>
-          <li>Designed and built a <b>modular PyTorch framework</b> for training LLMs, vision, and embedding models across multi-GPU (and multi-node, in progress) setups — supports SOLO, DDP, FSDP, LoRA/QLoRA, 4/8-bit quantization, mixed precision, and distributed checkpointing, runnable via CLI or browser UI.</li>
-          <li>Extending with <b>multi-dimensional parallelism</b> — combining data, tensor, and pipeline parallelism (1F1B / GPipe) via DeviceMesh for 2D/3D parallel training.</li>
-          <li>Stack: PyTorch, FSDP/DDP, bitsandbytes, PEFT, Hugging Face.</li>
-        </ul>
-      </div>
-    </div>
 
     <div class="entry reveal">
       <div class="entry-meta"><span class="date">Jun 2023 — Present</span>devtech.pro</div>
@@ -341,15 +329,15 @@ footer a:hover{color:var(--accent)}
   <section id="projects">
     <div class="sec-head reveal"><span class="sec-num">02</span><h2 class="sec-title">Selected Projects</h2></div>
     <div class="proj-grid">
-      <div class="proj reveal"><div class="pdate">2025 — 2026</div><h4><a href="https://github.com/rachadlakis/agentic-ai-framework" target="_blank" rel="noopener">Agentic AI Framework</a></h4><p>Production-grade agentic AI platform. FastAPI async backend, PostgreSQL + SQLAlchemy ORM, PydanticAI agent workflows. Multi-agent orchestration, tool calling, RAG, MCP. Celery scheduler and real-time voice chat via OpenAI STT/TTS.</p></div>
-      <div class="proj reveal"><div class="pdate">2026</div><h4><a href="https://github.com/rachadlakis/omni-train" target="_blank" rel="noopener">OMNI-Train</a></h4><p>Multi-GPU training framework (CLI + web app) in PyTorch. DDP &amp; FSDP for faster training and models exceeding single-GPU memory. Mixed precision (bf16), gradient checkpointing, layer prefetching, PEFT, and quantization.</p></div>
-      <div class="proj reveal"><div class="pdate">2025</div><h4><a href="https://github.com/rachadlakis/mcp_project" target="_blank" rel="noopener">Model Context Protocol</a></h4><p>Implemented MCP servers and clients for Cooriroo, a fleet management system. Wrote the full MCP client and server in Python.</p></div>
-      <div class="proj reveal"><div class="pdate">2025</div><h4><a href="https://github.com/rachadlakis/FireDetection" target="_blank" rel="noopener">Threat Detection</a></h4><p>YOLOv12 + RF-DETR object detection over a 120K+ image dataset merged and normalized across classes. Tuned for best mAP and precision via Ultralytics &amp; Roboflow.</p></div>
-      <div class="proj reveal"><div class="pdate">2025</div><h4><a href="https://github.com/rachadlakis/agentic-ai" target="_blank" rel="noopener">Agentic AI</a></h4><p>Lightweight, SDK-free framework for building agentic applications over raw HTTP. ToolRegistry with auto-schema generation, MCP server &amp; client (stdio/SSE), Plan-and-Execute agent with multi-step decomposition, and a Streamlit UI. Supports OpenAI, Anthropic, and Gemini out of the box.</p></div>
+      <div class="proj reveal"><div class="pdate">2025 — 2026</div><h4>Agentic AI Framework</h4><p>Production-grade agentic AI platform. FastAPI async backend, PostgreSQL + SQLAlchemy ORM, PydanticAI agent workflows. Multi-agent orchestration, tool calling, RAG, MCP. Celery scheduler and real-time voice chat via OpenAI STT/TTS.</p><a href="https://github.com/rachadlakis/agentic-ai-framework" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="proj reveal"><div class="pdate">2026</div><h4>OMNI-Train</h4><p>Multi-GPU training framework (CLI + web app) in PyTorch. DDP &amp; FSDP for faster training and models exceeding single-GPU memory. Mixed precision (bf16), gradient checkpointing, layer prefetching, PEFT, and quantization.</p><a href="https://github.com/rachadlakis/omni-train" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="proj reveal"><div class="pdate">2025</div><h4>Model Context Protocol</h4><p>Implemented MCP servers and clients for Cooriroo, a fleet management system. Wrote the full MCP client and server in Python.</p><a href="https://github.com/rachadlakis/mcp_project" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="proj reveal"><div class="pdate">2025</div><h4>Threat Detection</h4><p>YOLOv12 + RF-DETR object detection over a 120K+ image dataset merged and normalized across classes. Tuned for best mAP and precision via Ultralytics &amp; Roboflow.</p><a href="https://github.com/rachadlakis/FireDetection" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="proj reveal"><div class="pdate">2025</div><h4>Agentic AI</h4><p>Lightweight, SDK-free framework for building agentic applications over raw HTTP. ToolRegistry with auto-schema generation, MCP server &amp; client (stdio/SSE), Plan-and-Execute agent with multi-step decomposition, and a Streamlit UI. Supports OpenAI, Anthropic, and Gemini out of the box.</p><a href="https://github.com/rachadlakis/agentic-ai" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
       <div class="proj reveal"><div class="pdate">2024</div><h4>Motion Detection</h4><p>Real-time motion detection system built with Python and PyTorch for computer vision applications. Frame differencing and object tracking for surveillance and monitoring use cases.</p></div>
       <div class="proj reveal"><div class="pdate">2024</div><h4>MightClick</h4><p>Chrome browser extension with AI-powered features — text generation, comments, translations, summaries, audio transcription, and image understanding via right-click interface.</p></div>
       <div class="proj reveal"><div class="pdate">2024</div><h4>Guided Transfer Learning</h4><p>Implemented GTL to improve training efficiency with limited data. Fine-tuned LLaMA 3.2-1B and BERT in pure PyTorch without specialized fine-tuning libraries. Ran comparative experiments on AWS SageMaker.</p></div>
-      <div class="proj reveal"><div class="pdate">2023</div><h4><a href="https://github.com/rachadlakis/PoseEstimationKeyPointsModels" target="_blank" rel="noopener">Age Detection</a></h4><p>Pose-estimation-based age recognition. Keypoints improved adult/child classification on full-body images with and without faces.</p></div>
+      <div class="proj reveal"><div class="pdate">2023</div><h4>Age Detection</h4><p>Pose-estimation-based age recognition. Keypoints improved adult/child classification on full-body images with and without faces.</p><a href="https://github.com/rachadlakis/PoseEstimationKeyPointsModels" class="proj-link" target="_blank" rel="noopener">GitHub</a></div>
       <div class="proj reveal"><div class="pdate">2022</div><h4>MNIST from Scratch</h4><p>Digit recognition in pure Python + NumPy — no PyTorch or TensorFlow. Hand-built matrix math for backprop and gradient descent.</p></div>
       <div class="proj reveal"><div class="pdate">2022</div><h4>Klangoo Fintech Award</h4><p>3rd place, international NLP competition (ZAKA). Sentiment analysis system over topic-filtered tweets for financial signals.</p></div>
       <div class="proj reveal"><div class="pdate">2022</div><h4>Face Emotion Recognition</h4><p>Deep learning model for real-time facial emotion classification using CNNs. Detects emotions such as happiness, sadness, anger, surprise, and neutral from facial expressions in images and video streams.</p></div>
