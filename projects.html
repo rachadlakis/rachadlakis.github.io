@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Rachad Lakis</title>
+<meta name="description" content="Selected projects by Rachad Lakis — Multi-GPU training, agentic AI, object detection, and more">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+
+<nav class="main-nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">Rachad Lakis</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="publications.html">Publications</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap page-content">
+  <div class="page-header reveal">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Selected Projects</h1>
+    <p class="page-intro">A showcase of my work in machine learning, deep learning, and AI — from multi-GPU training frameworks to agentic systems.</p>
+  </div>
+
+  <section id="projects">
+    <div class="proj-grid">
+      <div class="proj reveal">
+        <div class="pdate">2026</div>
+        <h4>Octopus AI</h4>
+        <p>Multi-agent system using A2A Protocol (Agent-to-Agent) over HTTP. Orchestrator coordinates 5 specialist agents: document service, planning pipeline (SequentialAgent), risk monitor (LoopAgent), reporting, and registry. PydanticAI-based architecture with sandboxed operations and structured workflows.</p>
+        <a href="https://github.com/rachadlakis/octopus-ai" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2025 — 2026</div>
+        <h4>Agentic AI Framework</h4>
+        <p>Production-grade agentic AI platform. FastAPI async backend, PostgreSQL + SQLAlchemy ORM, PydanticAI agent workflows. Multi-agent orchestration, tool calling, RAG, MCP. Celery scheduler and real-time voice chat via OpenAI STT/TTS.</p>
+        <a href="https://github.com/rachadlakis/agentic-ai-framework" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2026</div>
+        <h4>OMNI-Train</h4>
+        <p>Multi-GPU training framework (CLI + web app) in PyTorch. DDP &amp; FSDP for faster training and models exceeding single-GPU memory. Mixed precision (bf16), gradient checkpointing, layer prefetching, PEFT, and quantization.</p>
+        <a href="https://github.com/rachadlakis/omni-train" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2025</div>
+        <h4>Model Context Protocol</h4>
+        <p>Implemented MCP servers and clients for Cooriroo, a fleet management system. Wrote the full MCP client and server in Python.</p>
+        <a href="https://github.com/rachadlakis/mcp_project" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2025</div>
+        <h4>Threat Detection</h4>
+        <p>YOLOv12 + RF-DETR object detection over a 120K+ image dataset merged and normalized across classes. Tuned for best mAP and precision via Ultralytics &amp; Roboflow.</p>
+        <a href="https://github.com/rachadlakis/FireDetection" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2025</div>
+        <h4>Agentic AI</h4>
+        <p>Lightweight, SDK-free framework for building agentic applications over raw HTTP. ToolRegistry with auto-schema generation, MCP server &amp; client (stdio/SSE), Plan-and-Execute agent with multi-step decomposition, and a Streamlit UI. Supports OpenAI, Anthropic, and Gemini out of the box.</p>
+        <a href="https://github.com/rachadlakis/agentic-ai" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2024</div>
+        <h4>Motion Detection</h4>
+        <p>Real-time motion detection system built with Python and PyTorch for computer vision applications. Frame differencing and object tracking for surveillance and monitoring use cases.</p>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2024</div>
+        <h4>MightClick</h4>
+        <p>Chrome browser extension with AI-powered features — text generation, comments, translations, summaries, audio transcription, and image understanding via right-click interface.</p>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2024</div>
+        <h4>Guided Transfer Learning</h4>
+        <p>Implemented GTL to improve training efficiency with limited data. Fine-tuned LLaMA 3.2-1B and BERT in pure PyTorch without specialized fine-tuning libraries. Ran comparative experiments on AWS SageMaker.</p>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2023</div>
+        <h4>Age Detection</h4>
+        <p>Pose-estimation-based age recognition. Keypoints improved adult/child classification on full-body images with and without faces.</p>
+        <a href="https://github.com/rachadlakis/PoseEstimationKeyPointsModels" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2022</div>
+        <h4>MNIST from Scratch</h4>
+        <p>Digit recognition in pure Python + NumPy — no PyTorch or TensorFlow. Hand-built matrix math for backprop and gradient descent.</p>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2022</div>
+        <h4>Klangoo Fintech Award</h4>
+        <p>3rd place, international NLP competition (ZAKA). Sentiment analysis system over topic-filtered tweets for financial signals.</p>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2022</div>
+        <h4>Face Emotion Recognition</h4>
+        <p>Deep learning model for real-time facial emotion classification using CNNs. Detects emotions such as happiness, sadness, anger, surprise, and neutral from facial expressions in images and video streams.</p>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">R</div>
+        <h4>Stats &amp; Forecasting</h4>
+        <p>Twitter sentiment listening with PDF reporting; happiness-rate multiple regression; ARIMA(5,2,3) Tesla stock forecasting with full diagnostics.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Rachad Lakis · <a href="mailto:rachadlakis@gmail.com">rachadlakis@gmail.com</a> · Built with HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
