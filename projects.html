@@ -39,15 +39,23 @@
     <div class="proj-grid">
       <div class="proj reveal">
         <div class="pdate">2025</div>
-        <h4>Augur</h4>
-        <p><b>Multi-Agent Stock Trading System</b> — applied the same multi-agent orchestration pattern (A2A, orchestrator + specialized agents) to build an automated stock trading system, with agents coordinating market analysis and trade decisions.</p>
+        <h4>OMNI-Train</h4>
+        <p><b>Distributed PyTorch fine-tuning framework</b> — built a CLI and web application for training PyTorch and Hugging Face models with <b>DDP</b> and <b>FSDP</b>, mixed precision, gradient checkpointing, layer prefetching, PEFT, and quantization. Validated distributed training across <b>eight GPUs</b> on RunPod.</p>
+        <a href="https://github.com/rachadlakis/omni-train" class="proj-link" target="_blank" rel="noopener">GitHub</a>
       </div>
 
       <div class="proj reveal">
         <div class="pdate">2025</div>
         <h4>Histor</h4>
-        <p><b>Video Search and Alerts</b> — records every camera frame as searchable embeddings (YOLOX detection and tracking, CLIP, ViTPose); an LLM agent answers questions over the store and cites evidence frames; live alerts for zones, poses, fire and smoke. Trained its fire and smoke detector (YOLOv9, 22,800 images, RunPod) to test mAP50 0.69 at ~100 ms per frame on CPU; fixed a 3x throughput loss and an early-stopping/resume bug from the run logs.</p>
+        <p><b>Video search, evidence retrieval, and alerts</b> — built a video intelligence pipeline that indexes camera frames as searchable embeddings using <b>YOLOX</b>, <b>CLIP</b>, and <b>ViTPose</b>. Enabled an LLM agent to answer natural-language questions over stored video and cite evidence frames; added live alerts for zones, poses, fire, and smoke. Trained a <b>YOLOv9</b> fire-and-smoke detector on 22,800 images; evaluated at <b>mAP50 0.69</b> and approximately <b>100 ms per frame on CPU</b>. Diagnosed a threefold throughput regression and an early-stopping/resume issue from run logs.</p>
         <a href="https://github.com/rachadlakis/mobius-tensors/tree/main/projects/histor" class="proj-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="proj reveal">
+        <div class="pdate">2025</div>
+        <h4>Ergon by Mobius Tensors</h4>
+        <p><b>AI employees for business workflows</b> — developed a multi-agent concept in which a Chief of Staff decomposes requests into tasks, delegates them to specialized AI employees, and consolidates results. Designed the system around company-specific context, including organizational profiles and document knowledge.</p>
+        <a href="https://github.com/rachadlakis/mobius-tensors/tree/main/projects/ergon" class="proj-link" target="_blank" rel="noopener">GitHub</a>
       </div>
 
       <div class="proj reveal">
@@ -58,29 +66,9 @@
       </div>
 
       <div class="proj reveal">
-        <div class="pdate">2025</div>
-        <h4>OMNI-Train</h4>
-        <p><b>Distributed Training Framework</b> — built a multi-GPU training framework (CLI + web app) supporting DDP and FSDP for any PyTorch/Hugging Face model, with mixed precision, gradient checkpointing, layer prefetching, PEFT, and quantization; validated at scale training across 8 GPUs on RunPod.</p>
-        <a href="https://github.com/rachadlakis/omni-train" class="proj-link" target="_blank" rel="noopener">GitHub</a>
-      </div>
-
-      <div class="proj reveal">
-        <div class="pdate">2025</div>
-        <h4>Ergon</h4>
-        <p><b>AI Employees for Any Company</b> — you talk to a Chief of Staff; it splits your request into tasks, hands each one to the right employee, and gives you back one result. Every employee knows the company it works for: its profile and its documents.</p>
-        <a href="https://github.com/rachadlakis/mobius-tensors/tree/main/projects/ergon" class="proj-link" target="_blank" rel="noopener">GitHub</a>
-      </div>
-
-      <div class="proj reveal">
-        <div class="pdate">2025</div>
-        <h4>Argus</h4>
-        <p><b>Fire, Smoke &amp; Threat Detection (Computer Vision)</b> — curated a 120,000+ image dataset (merged COCO/YOLO formats) and trained/evaluated multiple YOLO variants (n/s/m/l/xl) and RF-DETR models for real-time fire, smoke, and firearm detection.</p>
-      </div>
-
-      <div class="proj reveal">
         <div class="pdate">2022</div>
         <h4>MNIST Digit Recognition</h4>
-        <p><b>From Scratch</b> — built a digit-recognition model using pure Python and NumPy, implementing backpropagation and gradient descent manually without PyTorch or TensorFlow.</p>
+        <p><b>Neural network built from scratch</b> — implemented digit recognition in pure Python and NumPy, including backpropagation and gradient descent, without PyTorch or TensorFlow.</p>
       </div>
     </div>
   </section>
